@@ -38,4 +38,22 @@
       </tr>
     </table>
   </mat-card>
+
+  <mat-card>
+    <mat-card-subtitle> Faixa Etaria das mulheres que realizam os exames </mat-card-subtitle>
+    <table matSort (matSortChange)="faixaetarias">
+        <tr>
+          <th mat-sort-header="id">ID</th>
+          <th mat-sort-header="faixa_i">Faixa inicial</th>
+          <th mat-sort-header="faixa_n">Faixa final</th>
+          <th mat-sort-header="descricao">Descrição</th>
+        </tr>
+        <tr *ngFor="let element of faixaetarias">
+          <td>{{element.id}}</td>
+          <td>{{element.faixa_i}}</td>
+          <td>{{element.faixa_n}}</td>
+          <td>{{element.descricao}}</td>
+        </tr>
+      </table>
+  </mat-card>
 </div>
