@@ -26,8 +26,8 @@ export class OcorrenciasComponent implements OnInit{
 
   ngOnInit(): void {
     this.regiaoService.listRegioes() .subscribe(regioes => {this.regioes = regioes});
-    this.ocorrencia_exame = this.ocorrenciaService.listOcorrencias();
-    this.faixaetarias = this.faixaEtariaService.listFaixaEtaria();
+    this.ocorrenciaService.listOcorrencias() .subscribe(ocorrencia_exame => {this.ocorrencia_exame = ocorrencia_exame});
+    this.faixaEtariaService.listFaixaEtaria() .subscribe(faixaetarias => {this.faixaetarias = faixaetarias});
   }
 
 }

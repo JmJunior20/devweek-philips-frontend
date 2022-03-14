@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Faixaetaria } from '../model/faixaetaria';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +9,12 @@ import { Faixaetaria } from '../model/faixaetaria';
 
 export class FaixaetariaService {
 
-  constructor() { }
+  constructor(
+    private http:HttpClient
+  ) { }
 
-  listFaixaEtaria(): Faixaetaria[]{
-    return [
-      { id: 1, faixa_i: 0, faixa_n: 14, descricao: 'Até 14 anos' }
-    ]
+  listFaixaEtaria(): Observable<Faixaetaria[]>{
+    const url = '/api/faixaetaria';
+    return this.http.get<Faixaetaria[]>(url);
   }
 }
