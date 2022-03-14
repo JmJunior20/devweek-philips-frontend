@@ -13,7 +13,7 @@ export class RegiaoService {
   ) { }
 
   listRegioes(): Observable<Regiao[]>{
-    const url = '/assets/regioes.json';
+    const url = 'http://localhost:8080';
     return  this.http.get<Regiao[]>(url);
   }
 }
